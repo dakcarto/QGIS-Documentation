@@ -466,7 +466,7 @@ useful for debugging::
 .. index:: single symbol renderer, symbology; single symbol renderer
 
 Single Symbol Renderer
-......................
+----------------------
 
 You can get the symbol used for rendering by calling :func:`symbol` method and
 change it with :func:`setSymbol` method (note for C++ devs: the renderer takes
@@ -475,7 +475,7 @@ ownership of the symbol.)
 .. index:: categorized symbology renderer, symbology; categorized symbol renderer
 
 Categorized Symbol Renderer
-...........................
+---------------------------
 
 You can query and set attribute name which is used for classification: use
 :func:`classAttribute` and :func:`setClassAttribute` methods.
@@ -495,7 +495,7 @@ for the classification: :func:`sourceColorRamp` and :func:`sourceSymbol` methods
 .. index:: symbology; graduated symbol renderer, graduated symbol renderer
 
 Graduated Symbol Renderer
-.........................
+-------------------------
 
 This renderer is very similar to the categorized symbol renderer described
 above, but instead of one attribute value per class it works with ranges of
@@ -520,60 +520,51 @@ If you wish to create your own graduated symbol renderer you can do so as
 illustrated in the example snippet below (which creates a simple two class
 arrangement)::
 
-	from qgis.core import  (QgsVectorLayer,
-                		QgsMapLayerRegistry,
-				QgsGraduatedSymbolRendererV2,
-		                QgsSymbolV2,
-				QgsRendererRangeV2)
+    from qgis.core import  (QgsVectorLayer,
+                            QgsMapLayerRegistry,
+                            QgsGraduatedSymbolRendererV2,
+                            QgsSymbolV2,
+                            QgsRendererRangeV2)
 
-	myVectorLayer = QgsVectorLayer(myVectorPath, myName, 'ogr')
-	myTargetField = 'target_field'
-	myRangeList = []
-	myOpacity = 1
-	# Make our first symbol and range...
-	myMin = 0.0
-	myMax = 50.0
-	myLabel = 'Group 1'
-	myColour = QtGui.QColor('#ffee00')
-	mySymbol1 = QgsSymbolV2.defaultSymbol(
-		   myVectorLayer.geometryType())
-	mySymbol1.setColor(myColour)
-	mySymbol1.setAlpha(myOpacity)
-	myRange1 = QgsRendererRangeV2(
-		        myMin,
-		        myMax,
-		        mySymbol1,
-		        myLabel)
-	myRangeList.append(myRange1)
-	#now make another symbol and range...
-	myMin = 50.1
-	myMax = 100
-	myLabel = 'Group 2'
-	myColour = QtGui.QColor('#00eeff')
-	mySymbol2 = QgsSymbolV2.defaultSymbol(
-		   myVectorLayer.geometryType())
-	mySymbol2.setColor(myColour)
-	mySymbol2.setAlpha(myOpacity)
-	myRange2 = QgsRendererRangeV2(
-		        myMin,
-		        myMax,
-		        mySymbol2
-		        myLabel)
-	myRangeList.append(myRange2)
-	myRenderer = QgsGraduatedSymbolRendererV2(
-		        '', myRangeList)
-	myRenderer.setMode(
-		QgsGraduatedSymbolRendererV2.EqualInterval)
-	myRenderer.setClassAttribute(myTargetField)
+    myVectorLayer = QgsVectorLayer(myVectorPath, myName, 'ogr')
+    myTargetField = 'target_field'
+    myRangeList = []
+    myOpacity = 1
 
-	myVectorLayer.setRendererV2(myRenderer)
-	QgsMapLayerRegistry.instance().addMapLayer(myVectorLayer)
+    # make our first symbol and range...
+    myMin = 0.0
+    myMax = 50.0
+    myLabel = 'Group 1'
+    myColour = QtGui.QColor('#ffee00')
+    mySymbol1 = QgsSymbolV2.defaultSymbol(myVectorLayer.geometryType())
+    mySymbol1.setColor(myColour)
+    mySymbol1.setAlpha(myOpacity)
+    myRange1 = QgsRendererRangeV2(myMin, myMax, mySymbol1, myLabel)
+    myRangeList.append(myRange1)
+
+    # now make another symbol and range...
+    myMin = 50.1
+    myMax = 100
+    myLabel = 'Group 2'
+    myColour = QtGui.QColor('#00eeff')
+    mySymbol2 = QgsSymbolV2.defaultSymbol(myVectorLayer.geometryType())
+    mySymbol2.setColor(myColour)
+    mySymbol2.setAlpha(myOpacity)
+    myRange2 = QgsRendererRangeV2(myMin, myMax, mySymbol2, myLabel)
+    myRangeList.append(myRange2)
+
+    myRenderer = QgsGraduatedSymbolRendererV2('', myRangeList)
+    myRenderer.setMode(QgsGraduatedSymbolRendererV2.EqualInterval)
+    myRenderer.setClassAttribute(myTargetField)
+
+    myVectorLayer.setRendererV2(myRenderer)
+    QgsMapLayerRegistry.instance().addMapLayer(myVectorLayer)
 
 
 .. index:: symbols; working with
 
 Working with Symbols
-....................
+--------------------
 
 For representation of symbols, there is :class:`QgsSymbolV2` base class with
 three derived classes:
@@ -605,7 +596,7 @@ Size and width are in millimeters by default, angles are in degrees.
 .. index:: symbol layers; working with
 
 Working with Symbol Layers
-..........................
+--------------------------
 
 As said before, symbol layers (subclasses of :class:`QgsSymbolLayerV2`)
 determine the appearance of the features.  There are several basic symbol layer
@@ -775,7 +766,7 @@ The last step is to add this symbol layer to the registry --- and we are done.
   pair: custom; renderers
 
 Creating Custom Renderers
-.........................
+-------------------------
 
 It might be useful to create a new renderer implementation if you would like to
 customize the rules how to select symbols for rendering of features. Some use
@@ -895,7 +886,7 @@ can be loaded from a `Qt resource <http://qt.nokia.com/doc/4.5/resources.html>`_
 (PyQt4 includes .qrc compiler for Python).
 
 Further Topics
-..............
+--------------
 
 **TODO:**
  * creating/modifying symbols
