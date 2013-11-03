@@ -885,6 +885,69 @@ of the metadata class. The icon can be loaded from a file (as shown above) or
 can be loaded from a `Qt resource <http://qt.nokia.com/doc/4.5/resources.html>`_
 (PyQt4 includes .qrc compiler for Python).
 
+.. index:: labeling; data defined labeling, PAL labeling engine
+
+Labeling of Vector Layers
+=========================
+
+Many aspects of labeling vector features can be accessed and configured via
+Python. The following labeling engine components are accessible:
+
+* Auto-placement engine settings and debugging output options
+* Layer labeling properties (enabled, font, etc.)
+* Data defined overrides of layer properties
+* Labels rendered to map canvas
+
+The labeling process, per map canvas rendering, follows these steps:
+
+#. **Feature Registration**
+
+   As features are processed for symbology rendering, duplicates are 'registered'
+   with the labeling engine. During registration, any data defined overrides
+   that may affect the labeling auto-placement solution are applied.
+
+#. **PAL Solution**
+
+   After all layers are rendered, a collision solution is computed by the PAL
+   (Automated Placement of Labels) library that produces viable label candidates,
+   which are reduced by calculated priorities down to the labels that do, or do
+   not, get rendered to the map canvas. Auto-placement engine settings, which
+   can be saved to the project, augment the solution (e.g. Number of candidates).
+
+#. **Rendering**
+
+   Labels to be rendered will have any further data defined overrides applied.
+   After rendering, the label's associated duplicate feature is deleted and the
+   label's canvas position object is stored in a location search tree. The tree
+   is used by the interactive labeling map tools to locate label(s).
+
+The C++ labeling classes that have Python bindings are:
+
+* :class:`QgsPalLabeling` (inherited from :class:`QgsLabelingEngineInterface`)
+
+  This is the default (and currently only) labeling engine for labeling vector
+  layers. This engine loads layer labeling settings, registers features with PAL
+  for layers with labeling enabled, interacts with PAL to solve for labeling
+  collisions and auto-placements, applies any data defined overrides, renders
+  labels, and stores labels in the location search tree.
+
+  Generally, you will probably
+
+* :class:`QgsPalLayerSettings`
+
+
+
+* :class:`QgsDataDefined`
+
+
+
+* :class:`QgsLabelPosition`
+
+
+
+
+.. TODO: def settingsDict(lyr) from unit tests
+
 Further Topics
 --------------
 
