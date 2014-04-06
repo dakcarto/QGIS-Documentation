@@ -1,5 +1,5 @@
-.. _install_qgis_mac:
+.. _virtual_machines:
 
 *********************
-Macintosh Compilation
+Virtual Test Machines
 *********************

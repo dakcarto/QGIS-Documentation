@@ -12,6 +12,7 @@ Please have a look into one of the documents below.
 
    User guide/Manual (QGIS Testing!) <user_manual/index>
    User guide/Manual PDF's <http://docs.qgis.org/testing/pdf/>
+   Developer guide (QGIS Testing!) <developer_guide/index>
    PyQGIS cookbook (QGIS Testing!) <pyqgis_developer_cookbook/index>
    Documentation Guidelines <documentation_guidelines/index>
    A gentle introduction in GIS <gentle_gis_introduction/index>
