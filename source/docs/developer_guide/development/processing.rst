@@ -1,4 +1,6 @@
-.. _plugin_dev_processing:
+.. _dev_processing:
+
+.. highlight:: py
 
 ***************************
 Processing Plugin Providers

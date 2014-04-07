@@ -15,10 +15,10 @@ QGIS Developer Guide
     source_management
     install_qgis/index
     install_server/index
-    tools_configuration
-    plugin_dev/index
-    C++ and Python Apps <standalone_apps>
+    tools_config
+    development/index
+    debug_testing
+    deployment
+    virtual_machines
     coding_standards
     interface_guidelines
-    debugging_builds
-    virtual_machines
