@@ -78,6 +78,8 @@ All dialogs should implement the following:
    that directs the user to the appropriate help page by launching their web
    browser
 
+See also: :ref:`interface_guidelines`
+
 C++ Files
 =========
 

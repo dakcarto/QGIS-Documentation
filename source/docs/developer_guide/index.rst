@@ -9,16 +9,18 @@ QGIS Developer Guide
 ====================
 
 .. toctree::
+    :maxdepth: 2
 
     intro
     project_overview
-    source_management
-    install_qgis/index
-    install_server/index
-    tools_config
-    development/index
-    debug_testing
-    deployment
+    managing_source
+    contributing_code
+    installing_qgis/index
+    installing_server/index
+    configuring_tools
+    developing_code/index
+    debugging_testing_code
+    deploying_code
     virtual_machines
     coding_standards
     interface_guidelines

@@ -1,8 +1,8 @@
 .. _install_qgis:
 
-****************
-QGIS Compilation
-****************
+***************
+Installing QGIS
+***************
 
 .. toctree::
 

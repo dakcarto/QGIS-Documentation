@@ -31,3 +31,7 @@ Unlike commercial software, businesses sponsoring QGIS development can be
 assured their financial investment goes directly towards needed features or
 fixes, rather than their software manufacturer's marketing budget, recurring
 license fees or unwanted additional features.
+
+Community
+=========
+

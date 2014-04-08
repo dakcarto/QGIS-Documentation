@@ -1,7 +1,5 @@
-.. _debug_testing:
+.. _tools_config:
 
 *********************
-Debugging and Testing
+Configuring Dev Tools
 *********************
-
-
