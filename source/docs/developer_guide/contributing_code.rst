@@ -18,14 +18,14 @@ welcome.
     your work as a plugin <dev_code>`.
 
 A very high percentage of the QGIS code base has been contributed by
-*volunteers*, with the remainder by commercial entities who understand the
-importance of contributing their code advancements, or those by developers they
-have sponsored, back to the project.
+*volunteers*, with the remainder by commercial entities or organizations who
+understand the importance of contributing their code advancements, or those by
+developers they have sponsored, back to the project.
 
 You do not need to be a core developer to commit your crafted code to the QGIS
 project. While core developers do have direct write access to the main code
 repositories, anyone can submit patches or create git-based pull requests via
-github.com.
+`github.com <http://github.com>`_.
 
 See: :ref:`managing_source` for information on setting up a local copy of the
 QGIS source for your project, and on how to manage your changes in a separate
@@ -84,8 +84,8 @@ of the project:
 
 .. _contribute_pull_request:
 
-How to Contribute via Pull Request
-----------------------------------
+How to Contribute via a Pull Request
+------------------------------------
 
 In general it is easier for developers if you submit GitHub Pull Requests (PR).
 We do not describe PRs here, but rather refer you to the GitHub PR
@@ -98,17 +98,18 @@ the pull request. Often core developers, who are also volunteers, are very busy
 and a good title and description helps give them a quick overview of your
 request.
 
-See: :ref:`pull_requests` for best practices and how to ensure your PR always
-stays ready to merge into master branch.
+See: :ref:`pull_requests` for best practices and how to keep your PR branch
+ready to merge into master branch.
 
 In general when you submit a PR you should take the responsibility to follow it
 through to completion - respond to queries posted by other developers, seek out
 a 'champion' for your feature and give them a gentle reminder occasionally if
 you see that your PR is not being acted on. Please bear in mind that the QGIS
 project is driven by volunteer effort and people may not be able to
-instantaneously attend to your PR. If you feel the PR is not receiving the
-attention it deserves your options to accelerate it should be (*in order of
-priority*):
+instantaneously attend to your PR.
+
+If you feel the PR is not receiving the attention it deserves, your options to
+accelerate it should be (*in order of priority*):
 
 * Send a message to the mailing list 'marketing' your PR and how wonderful it
   will be to have it included in the code base.
@@ -116,3 +117,6 @@ priority*):
 * Send a message to Marco Hugentobler (who manages the PR queue).
 * Send a message to the project steering committee asking them to help see your
   PR incorporated into the code base.
+
+If your PR is merged into master branch, you can then safely remove the PR's
+branch from your fork.

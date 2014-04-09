@@ -13,8 +13,8 @@ QGIS Developer Guide
 
     intro
     project_overview
-    managing_source
     contributing_code
+    managing_source
     installing_qgis/index
     installing_server/index
     configuring_tools

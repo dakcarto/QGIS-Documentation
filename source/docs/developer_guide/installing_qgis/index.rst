@@ -4,6 +4,10 @@
 Installing QGIS
 ***************
 
+.. warning::
+
+    Incomplete: see https://github.com/qgis/QGIS/blob/master/INSTALL
+
 .. toctree::
 
     cmake
