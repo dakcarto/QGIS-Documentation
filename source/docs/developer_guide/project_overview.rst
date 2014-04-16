@@ -39,3 +39,64 @@ technologies include:
   proprietary libraries, e.g. `Oracle DB Client <http://oracle.com>`_.
   Providers for obscure or new data storage formats...
 
+Directory Structure
+===================
+
+::
+
+    CMakeLists.txt         <- main CMake setup file
+    CMakeLists.txt.user    <- Qt Creator project settings (if using Qt Creator)
+    CTestConfig.cmake
+    INSTALL, CODING, etc.  <- older dev docs
+    COPYING                <- GPL license
+    cmake/                 <- CMake find modules and scripts
+    cmake_templates/       <- CMake files to be generated
+    debian/                <- package scripts
+    doc/                   <- older docs based on txt2tags
+    i18n/                  <- Qt Linguist translation files
+    images/                <- core image resources, including SVGs
+      images.qrc           <- where to add GUI images to become binary resources
+    mac/                   <- CMake build setup for Mac packaging
+    ms-windows/            <- Packaging scripts, including installer from Linux
+    postinstall/           <- CMake scripts to run after `make install`
+    python/                <- .sip binding files, matching sections of 'src'
+      analysis/
+      console/
+      core/
+      gui/
+      plugins/             <- core Python plugins
+      pyplugin_installer/  <- Plugin Manager and Installer
+      pyspatialite/        <- older internal module source
+      qsci_apis/           <- built QScintilla2 API files for PyQGIS Console
+      utils.py             <- PyQGIS utility module
+    resources/             <- resources and utilities to be installed
+    scripts/               <- various scripts
+    src/                   <- base source code
+      analysis/            <- analysis classes
+      app/                 <- main Desktop GUI app classes
+      astyle/              <- utility for C++ code style checking
+      browser/             <- QGIS Browser source
+      core/                <- core, base classes
+      crssync/             <- tool to sync srs.db with system projection tools
+      designer/            <- Qt Designer plugins
+      gui/                 <- reusable Qt-subclassed GUI classes
+      helpviewer/          <- obsolete help viewer?
+      mapserver/           <- QGIS Server
+      plugins/             <- core C++ plugins
+      providers/           <- data source providers source
+      python/              <- embedded Python interpreter classes
+      ui/                  <- Qt Designer .ui files
+    tests/                 <- CTest suite
+      algorithms/          <- custom unit tests
+      bench/               <- benchmarking utilities
+      qt_modeltest/        <- tool from Qt for checking custom item view models
+      src/                 <- C++ and Python unit tests, that match C++ 'src'
+        analysis/
+        app/
+        core/
+        gui/
+        providers/
+        python/            <- PyQGIS-based unit tests
+      testdata/            <- data for tests, including control images
+    tools/                 <- build config utility
+

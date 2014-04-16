@@ -5,3 +5,7 @@
 ***************************
 Processing Plugin Providers
 ***************************
+
+.. warning::
+
+   Incomplete: see https://github.com/qgis/QGIS/tree/master/python/plugins/processing/exampleprovider

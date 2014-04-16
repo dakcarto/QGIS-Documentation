@@ -90,10 +90,10 @@ Select the build settings tab (normally active by default).
     :align: center
     :width: 50em
 
-We now want to add a custom process step. Why? Because QGIS can currently only
+We now want to add a custom process step. -Why? Because QGIS can currently only
 run from an install directory, not its build directory, so we need to ensure
-that it is installed whenever we build it.  Under 'Build Steps', click on the
-'Add Build  Step' combo button and choose 'Custom Process Step'.
+that it is installed whenever we build it.-  Under 'Build Steps', click on the
+'Add Build Step' combo button and choose 'Custom Process Step'.
 
 .. figure:: /static/developer_guide/configuring_tools/qtcreator_06.jpeg
     :align: center

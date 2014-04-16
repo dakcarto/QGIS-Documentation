@@ -10,7 +10,7 @@ Installing QGIS
 
 .. toctree::
 
-    cmake
+    common
     linux
     windows
     mac
