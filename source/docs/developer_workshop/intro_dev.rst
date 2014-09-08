@@ -99,15 +99,14 @@ See `QGIS Governance section of the documentation <https://www.qgis.org/en/site/
 Where is |qg| in the OSGeo/FOSS4G software stack?
 =================================================
 
-Desktop is at the top. Or, QGIS libs and/or PyQGIS is in the middle or at the
-bottom!
+Desktop application is on top of the stack. Or, depending upon your development
+project, QGIS libs and/or PyQGIS is in the middle or at the bottom!
 
 How is development sponsored?
 =============================
 
 .. figure:: /static/developer_workshop/23_get-involved-donate.png
    :align: center
-   :width: 40em
 
 One way to support development is to contribute funds directly to the |qg|
 Project. Often general funds from the Project are used to organize code sprints
@@ -134,8 +133,69 @@ As of September 2014, the project has a renewed interest in a more formal
 process of garnering community feedback: the standard Request For Comment (RFC)
 process used in many software project, e.g. MapServer and GDAL/OGR.
 
-What can you as a dev do with |qg|?
-===================================
+The new QEP process allows for a sponsor to work submit a QEP for discussion and
+possible approval, *before* the implementaion is done. Generally, going through
+the QEP process is only warranted for larger coding projects that may
+significantly affect the |qg| codebase. However, from a sponsors perspective,
+the process can be used to assure a yeah-or-nay answer from the |qg| Project on
+the propsed change, afterwhich only the proposed implementation needs to meet
+standards and provide unit tests.
+
+What can you as a developer do with |qg|?
+=========================================
 
 .. InaSafe, ROAM, Plugins, core Dev
 
+- Make |qg| better by becoming a core developer!
+
+  - Help move |qg| codebase to newer technologies, e.g. Qt 5 and Python 3.
+
+  - Help integrate 3D capabilities into |qg|.
+
+  - Make the |qg| Web Client better and work on new mobile clients that
+    integrate with |qg| Server.
+
+.. figure:: /static/developer_workshop/30_qgis-web-client.png
+   :align: center
+   :width: 40em
+
+   `QGIS Web Client <https://github.com/qgis/QGIS-Web-Client>`_.
+
+
+- Craft C++ or Python plugins to solve a need or extend |qg| capabilities.
+
+.. figure:: /static/developer_workshop/28_opengeo-explorer.png
+   :align: center
+   :width: 40em
+
+   `Boundless OpenGeo Explorer plugin <http://qgis.boundlessgeo.com/static/docs/>`_ for integration with existing infrastructure.
+
+- Create standalone C++ or Python applications using |qg| as a component.
+
+.. figure:: /static/developer_workshop/25_roam-2.1-release.png
+   :align: center
+   :width: 40em
+
+   `IntraMaps Roam standalone Python application <https://github.com/DMS-Aus/Roam/wiki>`_ for mobile collection of field data.
+
+- Create custom Processing plugin providers
+
+.. figure:: /static/developer_workshop/29_oslandia-epanet.png
+   :align: center
+   :width: 40em
+
+   `Oslandia EPANET Processing provider <http://www.oslandia.com/qgis-plugin-for-water-management-en.html>`_ for water system management.
+
+- Solve problems that expensive GIS software can't
+
+.. figure:: /static/developer_workshop/26_inasafe-screeshot.png
+   :align: center
+   :width: 40em
+
+   Well-built `InaSAFE plugin for disaster preparedness <http://inasafe.org/en/>`_.
+
+.. figure:: /static/developer_workshop/27_inasafe-output.png
+   :align: center
+   :width: 40em
+
+   PDF output from InaSAFE plugin.

@@ -13,6 +13,7 @@ QGIS Developer Workshop
    intro_workshop
    config_tools
    tech_tour
+   debugging
    core_dev
    cpp_plugin
    standalone_cpp

@@ -50,14 +50,50 @@ how/where to get help. It is not specifically about how to write code, but how
 to gain the knowledge, set up the cross-platform development environment, then
 deploy and maintain the code, plugin or app.
 
-Why a VM setup and the chosen toolset?
-======================================
+Why a |vb| and virtual machine (VM) setup?
+==========================================
 
+This workshop is based off of the `OSGeo-Live Virtual Machine hard disk <http://live.osgeo.org/>`_.
+The OSGeo-Live project is a mature sub-project of the OSGeo Foundation and
+consists of numerous hard-working volunteers who have made an excellent demo
+tool for the OSGeo and FOSS4G tool stack.
 
+See also: `Slide presentation of what's on OSGeo-Live <http://live.osgeo.org/en/presentation/index.html>`_.
+Make sure to type 's' to see presentation notes.
+
+OSGeoLive 8.0+ is based off of Lubuntu_.
+
+.. _Lubuntu: http://lubuntu.net/
+
+**OK that's great, but why use a VM setup?**
+
+- Everyone will have exactly the same development environment and OS for use in
+  the workshop.
+
+- While the ultimate intent of the workshop is to set up an environment to get
+  you rolling on |qg| development, managing all of the potential problems of
+  installing dependencies and getting |qg| to compile could easily eat up a
+  whole day of a workshop.
+
+- The |vb| setup is a bit redundant for some attendees; but, when the workshop
+  is done, they will still have a working setup (for reference) and can later
+  delete it and uninstall |vb| to bring your system back to a clean state.
+
+- It is better to inconvenience workshop attendees with a |vb| setup than be
+  responsible for messing up their system (if things go wrong).
+
+- A good practice of being a |qg| developer is gaining the knowledge to set up
+  and manage a source build environment, often for multiple platforms.
+
+- Working in virtual machines has many advantages: portability, snapshots, and
+  automated build tools, like `Vagrant <https://www.vagrantup.com/>`_.
+
+- |qg| development *should be cross-platform* (even for Python plugin
+  developers). Having VM setups for the major platforms supported by |qg| will
+  help with testing your work and helping users with issues.
 
 Install of |qg| development environment
 =======================================
-
 
 Install |vb| on host computer
 -----------------------------
@@ -165,6 +201,28 @@ See also: `OSGeo-Live Quickstart for Running in a Virtual Machine <http://live.o
 
      Ensure your OSGeo-Live guest OS can connect to the internet. Otherwise,
      further package installs to the guest will likely fail.
+
+- Create shared folder between your host and guest
+
+  .. figure:: /static/developer_workshop/24_initial-vm-shared-folder.png
+     :align: center
+     :width: 40em
+
+     Ensure Auto-mount is checked.
+
+  Assuming your share (Folder Name in GUI) is ``my-share`` then |vb| will
+  auto-mount the host folder in the guest OS here (note the ``sf_`` prefix)::
+
+    /media/sf_my-share
+
+  To ensure write access by the guest's user, add the OSGeo-Live default user to
+  the appropriate group. Then, create a symbolic link to the share in a more
+  useable place::
+
+    sudo adduser user vboxsf
+    ln -s /media/sf_my-share ~/my-share
+
+  .. note:: The user/password for the default OSGeo-Live user is user/user.
 
 - Attach :file:`qgis-dev_workshop.vmdk` secondary virtual hard drive
 

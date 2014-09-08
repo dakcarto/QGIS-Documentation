@@ -11,6 +11,10 @@ is the most robust, but only because it is restricted. Mac OS X (10.6+ Server
 and 10.7+ Client) can only be  legally virtualized on Mac hardware; whereas,
 Linux and Windows can be  virtualized on any CPU that supports them.
 
+.. warning:: The information below is for reference only. It is to be
+   superseded by the :file:`qgis-dev-workshop.vmdk` setup in the newer
+   **QGIS Developer Workshop**.
+
 .. _osgeolive_vm:
 
 OSGeo-Live QGIS-dev Virtual Machine
