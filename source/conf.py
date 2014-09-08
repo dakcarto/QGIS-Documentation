@@ -1083,6 +1083,7 @@ rst_epilog = """
 .. |largeLandUseArea| replace:: Bontebok National Park
 .. |srtmFileName| replace:: :kbd:`srtm_41_19.tif`
 .. |localCRS| replace:: :kbd:`WGS 84 / UTM 34S`
+.. |vb| replace:: VirtualBox
 """
 
 # -- Options for LaTeX output --------------------------------------------------
