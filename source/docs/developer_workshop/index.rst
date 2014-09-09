@@ -10,15 +10,11 @@ QGIS Developer Workshop
    :maxdepth: 2
 
    intro_dev
-   intro_workshop
+   overview_setup
    config_tools
    tech_tour
-   debugging
    core_dev
-   cpp_plugin
-   standalone_cpp
-   python_plugin
-   standalone_py
-   processing_provider
-   deploy_code
+   plugins
+   standalone
+   processing
    resources

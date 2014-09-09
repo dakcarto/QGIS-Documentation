@@ -8,4 +8,6 @@ Processing Plugin Providers
 
 .. warning::
 
-   Incomplete: see https://github.com/qgis/QGIS/tree/master/python/plugins/processing/exampleprovider
+   Incomplete
+
+   See https://github.com/qgis/QGIS/tree/master/python/plugins/processing/algs/exampleprovider

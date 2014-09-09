@@ -7,7 +7,8 @@ Python Development
 ******************
 
 
-.. _python_bindings:
+.. warning::
 
-Python Bindings
----------------
+   Incomplete
+
+   See http://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/plugins.html

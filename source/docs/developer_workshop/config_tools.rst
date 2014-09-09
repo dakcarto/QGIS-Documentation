@@ -6,6 +6,10 @@
 Workshop - Tool Configuration
 *****************************
 
+.. contents::
+   :local:
+   :backlinks: top
+
 Where are the tools located?
 ============================
 
@@ -41,33 +45,70 @@ It has the following features:
 Overview of Qt Creator's Options
 --------------------------------
 
-TODO
+On launching QtCreator go to the :menuselection:`File->Sessions Manager...`
+menu and ensure :guilabel:`Restore last session on startup` is *checked*.
 
-Highlighter definitions to install
-..................................
+.. figure:: /static/developer_workshop/52_config-creator-session-manager.png
+   :align: center
+   :width: 40em
 
-QMake
-INI Files
-JSON
-Makefile
-Python
-Doxygen
-CMake
-SQL (PostgreSQL)
-Bash
-Diff
-reStructureText
-HTML
-C++/Qt4
+.. note::
+
+   If Creator ever launches and forgets your open project, or what files you
+   have open, go back to :guilabel:`Sessions Manager` and select your session
+   and click :guilabel:`Switch to`
+
+Go to the :menuselection:`Tools->Options...` menu.
+
+Go to the :guilabel:`Editor->Display` tab and ensure
+:guilabel:`Highlight current line` is checked.
+
+.. figure:: /static/developer_workshop/43_config-creator-opts-editor-display.png
+   :align: center
+   :width: 40em
+
+Under the :guilabel:`Editor->Generic Highlighter` tab click
+:guilabel:`Download Definitions...`:
+
+.. figure:: /static/developer_workshop/53_config-creator-opts-editor-highlight.png
+   :align: center
+   :width: 40em
+
+Select the following languages that are used in the |qg| project source tree, or
+in the workshop tutorials, then **click** :guilabel:`Download Selected Definitions`::
+
+  QMake
+  INI Files
+  JSON
+  Makefile
+  Python
+  Doxygen
+  CMake
+  SQL (PostgreSQL)
+  Bash
+  Diff
+  reStructureText
+  HTML
+  C++/Qt4
+
+Go to the :guilabel:`Build and Run->General` tab and ensure
+:guilabel:`Always build ...` and :guilabel:`Always deploy ...` are *unchecked*.
+
+.. figure:: /static/developer_workshop/51_config-creator-opts-build-run-gen.png
+   :align: center
+   :width: 40em
+
+.. note::
+
+   Since the |qg| project is based on CMake, and both it and Qt Creator sense
+   when your project needs to be rebuilt, it is unnecessary to always do so,
+   especially when launching to debug.
 
 Configuring QGIS Project
 ------------------------
 
-On launching QtCreator do:
-
-:menuselection:`File->Open File or Project`
-
-Then use the resulting file selection dialog to browse to and open this file::
+Go to the :menuselection:`File->Open File or Project` menu. Then, use the
+resulting file selection dialog to browse to and open::
 
   /media/usr/qgis-dev/qgis-src/CMakeLists.txt
 
@@ -231,14 +272,24 @@ style from::
    :align: center
    :width: 40em
 
-Building QGIS
--------------
+Compiling |qg| source tree
+--------------------------
+
+Usually compiling |qg| source can take a *very long time*, especially if you
+have less thatn 4 CPU cores to devote to the process; but, the
+:file:`qgis-dev-workshop.vmdk` disk already has a pre-compiled build.
 
 Open the :guilabel:`Compile` tab on the bottom of the main window, and expand
 it. Then, click the compile icon:
 
 .. figure:: /static/developer_workshop/49_config-creator-proj-compile.png
    :align: center
+
+If successful, you should see something like this output:
+
+.. figure:: /static/developer_workshop/59_config-creator-compile-output.png
+   :align: center
+   :width: 40em
 
 If QGIS compiles and installs OK, then for this setup you can turn off (don't
 delete) the ``make install`` step under the project's **Build Steps**, since we
@@ -260,20 +311,292 @@ Running and Debugging
 ---------------------
 
 Now you are ready to run and debug QGIS. To set a break point, simply open a
-source file and click in the left column.
+source file and click in the left column. To test debugging works, open the following file::
 
-.. figure:: /static/developer_guide/configuring_tools/qtcreator_14.jpeg
+  ﻿/media/user/qgis-dev/qgis-src/src/app/main.cpp
+
+Then, set a breakpoint at line ``#747``, or whatever line is associated with the
+following code line:
+
+.. figure:: /static/developer_workshop/54_config-creator-debug-line.png
    :align: center
    :width: 50em
 
 Now launch QGIS under the debugger by clicking the icon with a bug on it in the
 bottom left of the window.
 
-.. figure:: /static/developer_guide/configuring_tools/qtcreator_13.jpeg
+.. figure:: /static/developer_workshop/55_config-creator-debug-button.png
    :align: center
+
+.. note::
+
+   Alternatively, you can go to the Debug view section of the IDE and start the
+   debugger from the toolbar:
+
+   .. figure:: /static/developer_workshop/56_config-creator-debug-section.png
+      :align: center
+
+If successful, the debug view should look similar to this:
+
+.. figure:: /static/developer_workshop/57_config-creator-debug-view.png
+   :align: center
+   :width: 50em
+
+To see the debug output from the |qg| application itself, open the
+:guilabel:`Application Output` from the bottom toolbar of the app:
+
+.. figure:: /static/developer_workshop/58_config-creator-debug-view-app-output.png
+   :align: center
+   :width: 50em
 
 
 Configuring PyCharm
 ===================
 
+Define new project
+------------------
 
+On launching PyCharm, if it is your first time, you will need to create a new
+project:
+
+.. figure:: /static/developer_workshop/60_config-pycharm-new-proj.png
+   :align: center
+   :width: 50em
+
+Choose to make a new project with the following specifications:
+
+.. figure:: /static/developer_workshop/61_config-pycharm-new-proj-specs.png
+   :align: center
+   :width: 50em
+
+.. warning::
+
+   |qg| (as of version 2.6) only works with Python 2.5.x -> 2.7.x. Choosing
+   Python 3.x at this stage will greatly confuse things during development.
+
+.. note::
+
+   You will probably have to edit the :guilabel:`Location` path, since PyCharm
+   will try to add the Project name to the path::
+
+     ﻿/media/user/qgis-dev/qgis-src/python/plugins
+
+You will be prompted to add existing files, click :guilabel:`Yes`:
+
+.. figure:: /static/developer_workshop/62_config-pycharm-new-proj-add-files.png
+   :align: center
+   :width: 50em
+
+Adjust project's Python interpreter
+-----------------------------------
+
+.. note::
+
+   This is for when you are working with **qgis** modules of development builds.
+
+Go to :menuselection:`File->Settings...`, then under  **Project Settings**, go to
+**Project Interpreter**. Choose the small gear to the right of the listed
+interpreter and **click** :guilabel:`More...`:
+
+.. figure:: /static/developer_workshop/64_config-pycharm-settings-proj-py-int-more.png
+   :align: center
+   :width: 50em
+
+Normally, the installed :file:`qgis` modules, e.g. :file:`qgis.core`, in the
+system Python :file:`site-packages` (or :file:`dist-packages`) is fine for the
+auto-completion and code inspection routines of PyCharm to work, but we need to
+use the newly built :file:`qgis` modules from our source build directory.
+
+Add the following path to the interpreter. Also, if you have modules you would
+like to load from the PyCharm project's root path, add that as well::
+
+  ﻿/media/user/qgis-dev/qgis-src-build/output/python
+
+.. figure:: /static/developer_workshop/65_config-pycharm-settings-py-int-paths.png
+   :align: center
+   :width: 50em
+
+If you have the stable version of |qg| installed, which is the case when using
+OSGeo-Live, PyCharm will probably find those :file:`qgis` modules first, before
+our development modules. This will keep us from seeing new changes in the
+modules since the last stable build.
+
+Do the following to ensure the stable :file:`qgis` modules stay on a system
+Python path, *but* do not interfere with the development versions::
+
+   ﻿mkdir -p ~/.local/lib/python2.7/site-packages
+   ﻿sudo mv /usr/lib/python2.7/dist-packages/qgis \
+   ~/.local/lib/python2.7/site-packages/
+
+.. note::
+
+   Last line is a multi-line single command.
+   The user/password for the default OSGeo-Live user is user/user.
+
+To test new the setup use the following Python code snippet and run it from
+various Python interactive consoles::
+
+  from qgis.core import *
+  QGis.QGIS_VERSION
+
+Results from :menuselection:`Tools->Run Python Console...` in PyCharm:
+
+.. figure:: /static/developer_workshop/67_config-pycharm-console-check.png
+   :align: center
+   :width: 50em
+
+Results from PyQGIS Console inside of |qg| stable on OSGeo-Live:
+
+.. figure:: /static/developer_workshop/68_config-pycharm-console-check-qgis.png
+   :align: center
+   :width: 50em
+
+Results from Python Console inside of Terminal session on OSGeo-Live::
+
+  ﻿user@osgeolive:~$ python
+  Python 2.7.6 (default, Mar 22 2014, 22:59:38)
+  [GCC 4.8.2] on linux2
+  Type "help", "copyright", "credits" or "license" for more information.
+  >>> from qgis.core import *
+  >>> QGis.QGIS_VERSION
+  '2.4.0-Chugiak'
+
+.. note::
+
+   This does not affect the :file:`QGIS-dev-build` and :file:`QGIS-dev-install`
+   custom-built apps on the :file:`qgis-dev-workshop.vmdk` disk, which already
+   have their Python paths set up during the build process.
+
+.. highlight:: python
+
+The :file:`qgis` modules are compiled Python modules; and, as such, PyCharm must
+build temporary 'skeletons' of the exposed function calls in order to make
+auto-completion function in the code editor windows. To test auto-completion,
+open :file:`﻿plugins/fTools/fTools.py` from the Project browser panel and go to
+line #52 or whatever line is associated with the following code::
+
+  ﻿self.QgisVersion = unicode(QGis.QGIS_VERSION_INT)
+
+Then, :kbd:`Ctrl`-click on the ``﻿QGIS_VERSION_INT`` text. This should open the
+generated 'skeleton' for the :file:`qgis.core` module and scroll to the
+``QGis.QGIS_VERSION_INT`` property:
+
+.. figure:: /static/developer_workshop/69_config-pycharm-test-skeleton.png
+   :align: center
+   :width: 50em
+
+Debugging in PyCharm
+--------------------
+
+.. warning::
+
+   Apparently, remote debugging is now only available with the Professional
+   version of PyCharm, not the Community Edition.
+
+   TODO: Switch to *what* for cross-platform graphical debugging?
+
+.. note::
+
+   Originally published on `linfiniti.com blog
+   <http://linfiniti.com/2012/09/remote-debugging-qgis-plugins-using-pycharm/>`_.
+
+   TODO: Finish reformatting and integration with downloaded ``Hello World``
+   plugin.
+
+We are going to focus on the steps needed to remote debug Python scripts /
+plugins running inside |qg|. We are going to start with the assumption that you
+have your PyCharm set up and your plugin basics in place and now you are at the
+point where you wish to debug your software while it is running in |qg|.
+
+.. note::
+
+   You should very seldom need to use this technique if your code is heavily
+   tested (by means of a Python test suite); i.e., in most cases you can just
+   debug a particular test directly without needing to remotely attach to a
+   Python process in |qg|.
+
+Download the ``Hello World`` plugin. This will end up in::
+
+  ~/﻿.qgis2/python/plugins/HelloWorld
+
+You need to have ``pydevd`` module to be in your ``PYTHONPATH`` in the context
+of the running plugin. There are a number of other ways you could do this, for
+example by changing your code to add the pydev directory into ``sys.path``.
+
+To keep things simple we are going to copy PyCharm's ``pydev`` module to the
+``HelloWorld`` directory::
+
+  ﻿cp -R ﻿/home/user/pycharm-community-3.4.1/helpers/pydev \
+  /home/user/.qgis2/python/plugins/HelloWorld/
+
+Next, configure a Python debug server (provided as part of PyCharm). To do this,
+choose edit configurations from the task list:
+
+.. figure:: /static/developer_guide/configuring_tools/pycharm_01.jpg
+   :align: center
+   :width: 50em
+
+Next click on the little '+' icon and choose Python remote debug:
+
+.. figure:: /static/developer_guide/configuring_tools/pycharm_02.png
+   :align: center
+   :width: 50em
+
+.. note::
+
+   See also: http://www.jetbrains.com/pycharm/webhelp/remote-debugging.html
+
+Set the following options::
+
+    Local host name: localhost
+    Port: 53100
+
+Note that you can use any high port that you like (assuming it is unused).
+
+You will notice that on the dialog it gives you some handy hints as to what
+needs to be inserted into your code in order to enable the trace point:
+
+.. figure:: /static/developer_guide/configuring_tools/pycharm_03.png
+   :align: center
+   :width: 50em
+
+The next thing you need to do is add a couple of lines to the module that you
+wish to debug (this is also described in the above dialog). First, in your
+imports add this::
+
+    from pydev import pydevd
+
+And then **in the place where you wish execution to halt**, add this line::
+
+    pydevd.settrace('localhost',
+                    port=53100,
+                    stdoutToServer=True,
+                    stderrToServer=True)
+
+You can also try using your IP address instead 'localhost'.
+
+Ok now you are all set. One thing to remember is that the settrace line is just
+the initial breakpoint - you can set additional breakpoints in your code using
+normal PyCharm debugging techniques. Now launch your PyCharm debug server
+configuration by clicking the little run icon next to it (highlighted in red
+below):
+
+.. figure:: /static/developer_guide/configuring_tools/pycharm_04.png
+   :align: center
+   :width: 40em
+
+After this you will see some output like this in the PyCharm run panel::
+
+  Starting debug server at port 53100
+  Waiting for connection...
+
+Next fire up your copy of |qg| and open the plugin that will trigger your
+settrace. When the trace point is hit, PyCharm will enter debug mode and
+highlight the trace line in blue like this:
+
+.. figure:: /static/developer_guide/configuring_tools/pycharm_06.jpg
+   :align: center
+   :width: 50em
+
+Now you can step through your code, inspect variables and generally have a
+productive time understanding your code.

@@ -1,10 +1,14 @@
 .. comment out this Section (by putting '|updatedisclaimer|' on top) if file is not uptodate with release
 
-.. _dev_shop_intro_shop:
+.. _dev_shop_intro_setup:
 
 *****************************
 Workshop - Overview and Setup
 *****************************
+
+.. contents::
+   :local:
+   :backlinks: top
 
 Workshop concept is on how to become a |qg| developer. The goal is to get
 potential developers excited about and involved with the QGIS project, and to

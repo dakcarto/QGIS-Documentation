@@ -6,7 +6,21 @@
 Workshop - Tour of Technologies Used in Development
 ***************************************************
 
-Go to: :ref:``
+.. figure:: /static/developer_workshop/79_tec-tour-qgis_overview.png
+   :align: center
+   :width: 50em
 
-Bit of trivia: *Why are QGIS C++ classes prefixed with Qgs?*
-`Gary Sherman explains. <http://spatialgalaxy.net/2014/03/29/why-all-qgis-classes-start-with-qgs/>`_
+   Oversimplified graphic of |qg| technical components.
+
+Go to: :ref:`project_overview`
+
+Other associated tools used
+===========================
+
+- `cmake-gui <http://www.cmake.org/runningcmake/>`_
+
+   An example_ of using it in conjunction with Qt Creator.
+
+   .. _example: http://stackoverflow.com/a/11507098/2865523
+
+-

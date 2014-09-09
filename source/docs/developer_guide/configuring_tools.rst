@@ -4,6 +4,10 @@
 Configuring Dev Tools
 *********************
 
+.. warning:: The information below is for reference only. It is to be
+   superseded by the :file:`qgis-dev-workshop.vmdk` setup in the newer
+   **QGIS Developer Workshop**.
+
 .. _config_qtcreator:
 
 Qt Creator

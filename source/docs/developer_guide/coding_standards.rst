@@ -1,7 +1,5 @@
 .. _coding_standards:
 
-.. highlight:: cpp
-
 ****************
 Coding Standards
 ****************
@@ -11,6 +9,8 @@ These standards should be followed by all QGIS developers.
 .. contents::
    :local:
    :backlinks: top
+
+.. highlight:: cpp
 
 Classes
 =======
